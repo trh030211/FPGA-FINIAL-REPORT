@@ -1,0 +1,7 @@
+
+State Machine - |vga_blockmove|vga_display:u_vga_display|state
+Name state.idle state.s3 state.s2 state.s1 
+state.idle 0 0 0 0 
+state.s1 1 0 0 1 
+state.s2 1 0 1 0 
+state.s3 1 1 0 0 

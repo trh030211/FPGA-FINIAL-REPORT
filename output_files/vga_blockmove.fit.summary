@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Dec  4 16:24:49 2024
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : vga_blockmove
+Top-level Entity Name : vga_blockmove
+Family : Cyclone IV E
+Device : EP4CE10F17C8
+Timing Models : Final
+Total logic elements : 6,037 / 10,320 ( 58 % )
+    Total combinational functions : 5,444 / 10,320 ( 53 % )
+    Dedicated logic registers : 1,711 / 10,320 ( 17 % )
+Total registers : 1711
+Total pins : 28 / 180 ( 16 % )
+Total virtual pins : 0
+Total memory bits : 184,320 / 423,936 ( 43 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 1 / 2 ( 50 % )

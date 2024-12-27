@@ -1,0 +1,1391 @@
+Analysis & Elaboration report for vga_blockmove
+Fri Dec  6 21:03:37 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration IP Cores Summary
+  5. Source assignments for vga_display:u_vga_display
+  6. Source assignments for vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst|altsyncram:altsyncram_component|altsyncram_4kb1:auto_generated
+  7. Source assignments for vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst|altsyncram:altsyncram_component|altsyncram_s4b1:auto_generated
+  8. Source assignments for vga_display:u_vga_display|rom_snack_55x66x16:rom_snack_55x66x16inst|altsyncram:altsyncram_component|altsyncram_v7b1:auto_generated
+  9. Source assignments for sld_signaltap:auto_signaltap_0
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |vga_blockmove
+ 11. Parameter Settings for User Entity Instance: vga_pll:u_vga_pll|altpll:altpll_component
+ 12. Parameter Settings for User Entity Instance: vga_driver:u_vga_driver
+ 13. Parameter Settings for User Entity Instance: vga_display:u_vga_display
+ 14. Parameter Settings for User Entity Instance: vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst|altsyncram:altsyncram_component
+ 15. Parameter Settings for User Entity Instance: vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst|altsyncram:altsyncram_component
+ 16. Parameter Settings for User Entity Instance: vga_display:u_vga_display|rom_snack_55x66x16:rom_snack_55x66x16inst|altsyncram:altsyncram_component
+ 17. Parameter Settings for User Entity Instance: key_filter:key_filter_inst
+ 18. Parameter Settings for User Entity Instance: key_filter:key_filter_inst1
+ 19. Parameter Settings for User Entity Instance: key_filter:key_filter_inst2
+ 20. Parameter Settings for User Entity Instance: seg_595_dynamic:seg_595_dynamic_inst|seg_dynamic:seg_dynamic_inst
+ 21. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 22. altpll Parameter Settings by Entity Instance
+ 23. altsyncram Parameter Settings by Entity Instance
+ 24. Analysis & Elaboration Settings
+ 25. Port Connectivity Checks: "seg_595_dynamic:seg_595_dynamic_inst"
+ 26. Port Connectivity Checks: "vga_display:u_vga_display|bcd_8421:bcd_8421_inst"
+ 27. Port Connectivity Checks: "vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst"
+ 28. Port Connectivity Checks: "vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst"
+ 29. Signal Tap Logic Analyzer Settings
+ 30. Analysis & Elaboration Messages
+ 31. Analysis & Elaboration Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                      ;
++------------------------------------+------------------------------------------------+
+; Analysis & Elaboration Status      ; Successful - Fri Dec  6 21:03:37 2024          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; vga_blockmove                                  ;
+; Top-level Entity Name              ; vga_blockmove                                  ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; N/A until Partition Merge                      ;
+;     Total combinational functions  ; N/A until Partition Merge                      ;
+;     Dedicated logic registers      ; N/A until Partition Merge                      ;
+; Total registers                    ; N/A until Partition Merge                      ;
+; Total pins                         ; N/A until Partition Merge                      ;
+; Total virtual pins                 ; N/A until Partition Merge                      ;
+; Total memory bits                  ; N/A until Partition Merge                      ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
+; Total PLLs                         ; N/A until Partition Merge                      ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration IP Cores Summary                                                                                                                                                                                                                                                                                                                                                             ;
++--------+--------------+---------+--------------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                                    ; IP Include File                                ;
++--------+--------------+---------+--------------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |vga_blockmove|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                                                ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |vga_blockmove|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                                                ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |vga_blockmove|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                                                ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |vga_blockmove|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                                                ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |vga_blockmove|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                                                ;
+; Altera ; ROM: 1-PORT  ; 13.1    ; N/A          ; N/A          ; |vga_blockmove|vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst                                                                                                                                                                                                ; ip_core/rom_apple/rom_apple_20x20x16.v         ;
+; Altera ; ROM: 1-PORT  ; 13.1    ; N/A          ; N/A          ; |vga_blockmove|vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst                                                                                                                                                                                        ; ip_core/rom_apple_big/rom_apple_big_30x30x16.v ;
+; Altera ; ROM: 1-PORT  ; 13.1    ; N/A          ; N/A          ; |vga_blockmove|vga_display:u_vga_display|rom_snack_55x66x16:rom_snack_55x66x16inst                                                                                                                                                                                                 ; ip_core/rom_snack/rom_snack_55x66x16.v         ;
+; Altera ; ALTPLL       ; 13.1    ; N/A          ; N/A          ; |vga_blockmove|vga_pll:u_vga_pll                                                                                                                                                                                                                                                   ; vga_pll.v                                      ;
++--------+--------------+---------+--------------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+
+
++--------------------------------------------------+
+; Source assignments for vga_display:u_vga_display ;
++-------------------+-------+------+---------------+
+; Assignment        ; Value ; From ; To            ;
++-------------------+-------+------+---------------+
+; PRESERVE_REGISTER ; on    ; -    ; head_y[9]     ;
+; PRESERVE_REGISTER ; on    ; -    ; head_y[8]     ;
+; PRESERVE_REGISTER ; on    ; -    ; head_y[7]     ;
+; PRESERVE_REGISTER ; on    ; -    ; head_y[6]     ;
+; PRESERVE_REGISTER ; on    ; -    ; head_y[5]     ;
+; PRESERVE_REGISTER ; on    ; -    ; head_y[4]     ;
+; PRESERVE_REGISTER ; on    ; -    ; head_y[3]     ;
+; PRESERVE_REGISTER ; on    ; -    ; head_y[2]     ;
+; PRESERVE_REGISTER ; on    ; -    ; head_y[1]     ;
+; PRESERVE_REGISTER ; on    ; -    ; head_y[0]     ;
++-------------------+-------+------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst|altsyncram:altsyncram_component|altsyncram_4kb1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                   ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                    ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst|altsyncram:altsyncram_component|altsyncram_s4b1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                           ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                            ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for vga_display:u_vga_display|rom_snack_55x66x16:rom_snack_55x66x16inst|altsyncram:altsyncram_component|altsyncram_v7b1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                          ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                           ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0 ;
++-----------------+-------+------+----------------------+
+; Assignment      ; Value ; From ; To                   ;
++-----------------+-------+------+----------------------+
+; MESSAGE_DISABLE ; 13410 ; -    ; -                    ;
++-----------------+-------+------+----------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |vga_blockmove ;
++----------------+----------------------+---------------------------------------+
+; Parameter Name ; Value                ; Type                                  ;
++----------------+----------------------+---------------------------------------+
+; CNT_MAX        ; 11110100001000111111 ; Unsigned Binary                       ;
++----------------+----------------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_pll:u_vga_pll|altpll:altpll_component ;
++-------------------------------+---------------------------+----------------------------+
+; Parameter Name                ; Value                     ; Type                       ;
++-------------------------------+---------------------------+----------------------------+
+; OPERATION_MODE                ; NORMAL                    ; Untyped                    ;
+; PLL_TYPE                      ; AUTO                      ; Untyped                    ;
+; LPM_HINT                      ; CBX_MODULE_PREFIX=vga_pll ; Untyped                    ;
+; QUALIFY_CONF_DONE             ; OFF                       ; Untyped                    ;
+; COMPENSATE_CLOCK              ; CLK0                      ; Untyped                    ;
+; SCAN_CHAIN                    ; LONG                      ; Untyped                    ;
+; PRIMARY_CLOCK                 ; INCLK0                    ; Untyped                    ;
+; INCLK0_INPUT_FREQUENCY        ; 20000                     ; Signed Integer             ;
+; INCLK1_INPUT_FREQUENCY        ; 0                         ; Untyped                    ;
+; GATE_LOCK_SIGNAL              ; NO                        ; Untyped                    ;
+; GATE_LOCK_COUNTER             ; 0                         ; Untyped                    ;
+; LOCK_HIGH                     ; 1                         ; Untyped                    ;
+; LOCK_LOW                      ; 1                         ; Untyped                    ;
+; VALID_LOCK_MULTIPLIER         ; 1                         ; Untyped                    ;
+; INVALID_LOCK_MULTIPLIER       ; 5                         ; Untyped                    ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF                       ; Untyped                    ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF                       ; Untyped                    ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF                       ; Untyped                    ;
+; SKIP_VCO                      ; OFF                       ; Untyped                    ;
+; SWITCH_OVER_COUNTER           ; 0                         ; Untyped                    ;
+; SWITCH_OVER_TYPE              ; AUTO                      ; Untyped                    ;
+; FEEDBACK_SOURCE               ; EXTCLK0                   ; Untyped                    ;
+; BANDWIDTH                     ; 0                         ; Untyped                    ;
+; BANDWIDTH_TYPE                ; AUTO                      ; Untyped                    ;
+; SPREAD_FREQUENCY              ; 0                         ; Untyped                    ;
+; DOWN_SPREAD                   ; 0                         ; Untyped                    ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF                       ; Untyped                    ;
+; SELF_RESET_ON_LOSS_LOCK       ; OFF                       ; Untyped                    ;
+; CLK9_MULTIPLY_BY              ; 0                         ; Untyped                    ;
+; CLK8_MULTIPLY_BY              ; 0                         ; Untyped                    ;
+; CLK7_MULTIPLY_BY              ; 0                         ; Untyped                    ;
+; CLK6_MULTIPLY_BY              ; 0                         ; Untyped                    ;
+; CLK5_MULTIPLY_BY              ; 1                         ; Untyped                    ;
+; CLK4_MULTIPLY_BY              ; 1                         ; Untyped                    ;
+; CLK3_MULTIPLY_BY              ; 1                         ; Untyped                    ;
+; CLK2_MULTIPLY_BY              ; 1                         ; Untyped                    ;
+; CLK1_MULTIPLY_BY              ; 1                         ; Untyped                    ;
+; CLK0_MULTIPLY_BY              ; 1                         ; Signed Integer             ;
+; CLK9_DIVIDE_BY                ; 0                         ; Untyped                    ;
+; CLK8_DIVIDE_BY                ; 0                         ; Untyped                    ;
+; CLK7_DIVIDE_BY                ; 0                         ; Untyped                    ;
+; CLK6_DIVIDE_BY                ; 0                         ; Untyped                    ;
+; CLK5_DIVIDE_BY                ; 1                         ; Untyped                    ;
+; CLK4_DIVIDE_BY                ; 1                         ; Untyped                    ;
+; CLK3_DIVIDE_BY                ; 1                         ; Untyped                    ;
+; CLK2_DIVIDE_BY                ; 1                         ; Untyped                    ;
+; CLK1_DIVIDE_BY                ; 1                         ; Untyped                    ;
+; CLK0_DIVIDE_BY                ; 2                         ; Signed Integer             ;
+; CLK9_PHASE_SHIFT              ; 0                         ; Untyped                    ;
+; CLK8_PHASE_SHIFT              ; 0                         ; Untyped                    ;
+; CLK7_PHASE_SHIFT              ; 0                         ; Untyped                    ;
+; CLK6_PHASE_SHIFT              ; 0                         ; Untyped                    ;
+; CLK5_PHASE_SHIFT              ; 0                         ; Untyped                    ;
+; CLK4_PHASE_SHIFT              ; 0                         ; Untyped                    ;
+; CLK3_PHASE_SHIFT              ; 0                         ; Untyped                    ;
+; CLK2_PHASE_SHIFT              ; 0                         ; Untyped                    ;
+; CLK1_PHASE_SHIFT              ; 0                         ; Untyped                    ;
+; CLK0_PHASE_SHIFT              ; 0                         ; Untyped                    ;
+; CLK5_TIME_DELAY               ; 0                         ; Untyped                    ;
+; CLK4_TIME_DELAY               ; 0                         ; Untyped                    ;
+; CLK3_TIME_DELAY               ; 0                         ; Untyped                    ;
+; CLK2_TIME_DELAY               ; 0                         ; Untyped                    ;
+; CLK1_TIME_DELAY               ; 0                         ; Untyped                    ;
+; CLK0_TIME_DELAY               ; 0                         ; Untyped                    ;
+; CLK9_DUTY_CYCLE               ; 50                        ; Untyped                    ;
+; CLK8_DUTY_CYCLE               ; 50                        ; Untyped                    ;
+; CLK7_DUTY_CYCLE               ; 50                        ; Untyped                    ;
+; CLK6_DUTY_CYCLE               ; 50                        ; Untyped                    ;
+; CLK5_DUTY_CYCLE               ; 50                        ; Untyped                    ;
+; CLK4_DUTY_CYCLE               ; 50                        ; Untyped                    ;
+; CLK3_DUTY_CYCLE               ; 50                        ; Untyped                    ;
+; CLK2_DUTY_CYCLE               ; 50                        ; Untyped                    ;
+; CLK1_DUTY_CYCLE               ; 50                        ; Untyped                    ;
+; CLK0_DUTY_CYCLE               ; 50                        ; Signed Integer             ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped                    ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped                    ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped                    ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped                    ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped                    ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped                    ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped                    ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped                    ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped                    ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped                    ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped                    ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped                    ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped                    ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped                    ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped                    ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped                    ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped                    ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped                    ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped                    ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped                    ;
+; LOCK_WINDOW_UI                ;  0.05                     ; Untyped                    ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED                    ; Untyped                    ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED                    ; Untyped                    ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED                    ; Untyped                    ;
+; DPA_MULTIPLY_BY               ; 0                         ; Untyped                    ;
+; DPA_DIVIDE_BY                 ; 1                         ; Untyped                    ;
+; DPA_DIVIDER                   ; 0                         ; Untyped                    ;
+; EXTCLK3_MULTIPLY_BY           ; 1                         ; Untyped                    ;
+; EXTCLK2_MULTIPLY_BY           ; 1                         ; Untyped                    ;
+; EXTCLK1_MULTIPLY_BY           ; 1                         ; Untyped                    ;
+; EXTCLK0_MULTIPLY_BY           ; 1                         ; Untyped                    ;
+; EXTCLK3_DIVIDE_BY             ; 1                         ; Untyped                    ;
+; EXTCLK2_DIVIDE_BY             ; 1                         ; Untyped                    ;
+; EXTCLK1_DIVIDE_BY             ; 1                         ; Untyped                    ;
+; EXTCLK0_DIVIDE_BY             ; 1                         ; Untyped                    ;
+; EXTCLK3_PHASE_SHIFT           ; 0                         ; Untyped                    ;
+; EXTCLK2_PHASE_SHIFT           ; 0                         ; Untyped                    ;
+; EXTCLK1_PHASE_SHIFT           ; 0                         ; Untyped                    ;
+; EXTCLK0_PHASE_SHIFT           ; 0                         ; Untyped                    ;
+; EXTCLK3_TIME_DELAY            ; 0                         ; Untyped                    ;
+; EXTCLK2_TIME_DELAY            ; 0                         ; Untyped                    ;
+; EXTCLK1_TIME_DELAY            ; 0                         ; Untyped                    ;
+; EXTCLK0_TIME_DELAY            ; 0                         ; Untyped                    ;
+; EXTCLK3_DUTY_CYCLE            ; 50                        ; Untyped                    ;
+; EXTCLK2_DUTY_CYCLE            ; 50                        ; Untyped                    ;
+; EXTCLK1_DUTY_CYCLE            ; 50                        ; Untyped                    ;
+; EXTCLK0_DUTY_CYCLE            ; 50                        ; Untyped                    ;
+; VCO_MULTIPLY_BY               ; 0                         ; Untyped                    ;
+; VCO_DIVIDE_BY                 ; 0                         ; Untyped                    ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                         ; Untyped                    ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                         ; Untyped                    ;
+; VCO_MIN                       ; 0                         ; Untyped                    ;
+; VCO_MAX                       ; 0                         ; Untyped                    ;
+; VCO_CENTER                    ; 0                         ; Untyped                    ;
+; PFD_MIN                       ; 0                         ; Untyped                    ;
+; PFD_MAX                       ; 0                         ; Untyped                    ;
+; M_INITIAL                     ; 0                         ; Untyped                    ;
+; M                             ; 0                         ; Untyped                    ;
+; N                             ; 1                         ; Untyped                    ;
+; M2                            ; 1                         ; Untyped                    ;
+; N2                            ; 1                         ; Untyped                    ;
+; SS                            ; 1                         ; Untyped                    ;
+; C0_HIGH                       ; 0                         ; Untyped                    ;
+; C1_HIGH                       ; 0                         ; Untyped                    ;
+; C2_HIGH                       ; 0                         ; Untyped                    ;
+; C3_HIGH                       ; 0                         ; Untyped                    ;
+; C4_HIGH                       ; 0                         ; Untyped                    ;
+; C5_HIGH                       ; 0                         ; Untyped                    ;
+; C6_HIGH                       ; 0                         ; Untyped                    ;
+; C7_HIGH                       ; 0                         ; Untyped                    ;
+; C8_HIGH                       ; 0                         ; Untyped                    ;
+; C9_HIGH                       ; 0                         ; Untyped                    ;
+; C0_LOW                        ; 0                         ; Untyped                    ;
+; C1_LOW                        ; 0                         ; Untyped                    ;
+; C2_LOW                        ; 0                         ; Untyped                    ;
+; C3_LOW                        ; 0                         ; Untyped                    ;
+; C4_LOW                        ; 0                         ; Untyped                    ;
+; C5_LOW                        ; 0                         ; Untyped                    ;
+; C6_LOW                        ; 0                         ; Untyped                    ;
+; C7_LOW                        ; 0                         ; Untyped                    ;
+; C8_LOW                        ; 0                         ; Untyped                    ;
+; C9_LOW                        ; 0                         ; Untyped                    ;
+; C0_INITIAL                    ; 0                         ; Untyped                    ;
+; C1_INITIAL                    ; 0                         ; Untyped                    ;
+; C2_INITIAL                    ; 0                         ; Untyped                    ;
+; C3_INITIAL                    ; 0                         ; Untyped                    ;
+; C4_INITIAL                    ; 0                         ; Untyped                    ;
+; C5_INITIAL                    ; 0                         ; Untyped                    ;
+; C6_INITIAL                    ; 0                         ; Untyped                    ;
+; C7_INITIAL                    ; 0                         ; Untyped                    ;
+; C8_INITIAL                    ; 0                         ; Untyped                    ;
+; C9_INITIAL                    ; 0                         ; Untyped                    ;
+; C0_MODE                       ; BYPASS                    ; Untyped                    ;
+; C1_MODE                       ; BYPASS                    ; Untyped                    ;
+; C2_MODE                       ; BYPASS                    ; Untyped                    ;
+; C3_MODE                       ; BYPASS                    ; Untyped                    ;
+; C4_MODE                       ; BYPASS                    ; Untyped                    ;
+; C5_MODE                       ; BYPASS                    ; Untyped                    ;
+; C6_MODE                       ; BYPASS                    ; Untyped                    ;
+; C7_MODE                       ; BYPASS                    ; Untyped                    ;
+; C8_MODE                       ; BYPASS                    ; Untyped                    ;
+; C9_MODE                       ; BYPASS                    ; Untyped                    ;
+; C0_PH                         ; 0                         ; Untyped                    ;
+; C1_PH                         ; 0                         ; Untyped                    ;
+; C2_PH                         ; 0                         ; Untyped                    ;
+; C3_PH                         ; 0                         ; Untyped                    ;
+; C4_PH                         ; 0                         ; Untyped                    ;
+; C5_PH                         ; 0                         ; Untyped                    ;
+; C6_PH                         ; 0                         ; Untyped                    ;
+; C7_PH                         ; 0                         ; Untyped                    ;
+; C8_PH                         ; 0                         ; Untyped                    ;
+; C9_PH                         ; 0                         ; Untyped                    ;
+; L0_HIGH                       ; 1                         ; Untyped                    ;
+; L1_HIGH                       ; 1                         ; Untyped                    ;
+; G0_HIGH                       ; 1                         ; Untyped                    ;
+; G1_HIGH                       ; 1                         ; Untyped                    ;
+; G2_HIGH                       ; 1                         ; Untyped                    ;
+; G3_HIGH                       ; 1                         ; Untyped                    ;
+; E0_HIGH                       ; 1                         ; Untyped                    ;
+; E1_HIGH                       ; 1                         ; Untyped                    ;
+; E2_HIGH                       ; 1                         ; Untyped                    ;
+; E3_HIGH                       ; 1                         ; Untyped                    ;
+; L0_LOW                        ; 1                         ; Untyped                    ;
+; L1_LOW                        ; 1                         ; Untyped                    ;
+; G0_LOW                        ; 1                         ; Untyped                    ;
+; G1_LOW                        ; 1                         ; Untyped                    ;
+; G2_LOW                        ; 1                         ; Untyped                    ;
+; G3_LOW                        ; 1                         ; Untyped                    ;
+; E0_LOW                        ; 1                         ; Untyped                    ;
+; E1_LOW                        ; 1                         ; Untyped                    ;
+; E2_LOW                        ; 1                         ; Untyped                    ;
+; E3_LOW                        ; 1                         ; Untyped                    ;
+; L0_INITIAL                    ; 1                         ; Untyped                    ;
+; L1_INITIAL                    ; 1                         ; Untyped                    ;
+; G0_INITIAL                    ; 1                         ; Untyped                    ;
+; G1_INITIAL                    ; 1                         ; Untyped                    ;
+; G2_INITIAL                    ; 1                         ; Untyped                    ;
+; G3_INITIAL                    ; 1                         ; Untyped                    ;
+; E0_INITIAL                    ; 1                         ; Untyped                    ;
+; E1_INITIAL                    ; 1                         ; Untyped                    ;
+; E2_INITIAL                    ; 1                         ; Untyped                    ;
+; E3_INITIAL                    ; 1                         ; Untyped                    ;
+; L0_MODE                       ; BYPASS                    ; Untyped                    ;
+; L1_MODE                       ; BYPASS                    ; Untyped                    ;
+; G0_MODE                       ; BYPASS                    ; Untyped                    ;
+; G1_MODE                       ; BYPASS                    ; Untyped                    ;
+; G2_MODE                       ; BYPASS                    ; Untyped                    ;
+; G3_MODE                       ; BYPASS                    ; Untyped                    ;
+; E0_MODE                       ; BYPASS                    ; Untyped                    ;
+; E1_MODE                       ; BYPASS                    ; Untyped                    ;
+; E2_MODE                       ; BYPASS                    ; Untyped                    ;
+; E3_MODE                       ; BYPASS                    ; Untyped                    ;
+; L0_PH                         ; 0                         ; Untyped                    ;
+; L1_PH                         ; 0                         ; Untyped                    ;
+; G0_PH                         ; 0                         ; Untyped                    ;
+; G1_PH                         ; 0                         ; Untyped                    ;
+; G2_PH                         ; 0                         ; Untyped                    ;
+; G3_PH                         ; 0                         ; Untyped                    ;
+; E0_PH                         ; 0                         ; Untyped                    ;
+; E1_PH                         ; 0                         ; Untyped                    ;
+; E2_PH                         ; 0                         ; Untyped                    ;
+; E3_PH                         ; 0                         ; Untyped                    ;
+; M_PH                          ; 0                         ; Untyped                    ;
+; C1_USE_CASC_IN                ; OFF                       ; Untyped                    ;
+; C2_USE_CASC_IN                ; OFF                       ; Untyped                    ;
+; C3_USE_CASC_IN                ; OFF                       ; Untyped                    ;
+; C4_USE_CASC_IN                ; OFF                       ; Untyped                    ;
+; C5_USE_CASC_IN                ; OFF                       ; Untyped                    ;
+; C6_USE_CASC_IN                ; OFF                       ; Untyped                    ;
+; C7_USE_CASC_IN                ; OFF                       ; Untyped                    ;
+; C8_USE_CASC_IN                ; OFF                       ; Untyped                    ;
+; C9_USE_CASC_IN                ; OFF                       ; Untyped                    ;
+; CLK0_COUNTER                  ; G0                        ; Untyped                    ;
+; CLK1_COUNTER                  ; G0                        ; Untyped                    ;
+; CLK2_COUNTER                  ; G0                        ; Untyped                    ;
+; CLK3_COUNTER                  ; G0                        ; Untyped                    ;
+; CLK4_COUNTER                  ; G0                        ; Untyped                    ;
+; CLK5_COUNTER                  ; G0                        ; Untyped                    ;
+; CLK6_COUNTER                  ; E0                        ; Untyped                    ;
+; CLK7_COUNTER                  ; E1                        ; Untyped                    ;
+; CLK8_COUNTER                  ; E2                        ; Untyped                    ;
+; CLK9_COUNTER                  ; E3                        ; Untyped                    ;
+; L0_TIME_DELAY                 ; 0                         ; Untyped                    ;
+; L1_TIME_DELAY                 ; 0                         ; Untyped                    ;
+; G0_TIME_DELAY                 ; 0                         ; Untyped                    ;
+; G1_TIME_DELAY                 ; 0                         ; Untyped                    ;
+; G2_TIME_DELAY                 ; 0                         ; Untyped                    ;
+; G3_TIME_DELAY                 ; 0                         ; Untyped                    ;
+; E0_TIME_DELAY                 ; 0                         ; Untyped                    ;
+; E1_TIME_DELAY                 ; 0                         ; Untyped                    ;
+; E2_TIME_DELAY                 ; 0                         ; Untyped                    ;
+; E3_TIME_DELAY                 ; 0                         ; Untyped                    ;
+; M_TIME_DELAY                  ; 0                         ; Untyped                    ;
+; N_TIME_DELAY                  ; 0                         ; Untyped                    ;
+; EXTCLK3_COUNTER               ; E3                        ; Untyped                    ;
+; EXTCLK2_COUNTER               ; E2                        ; Untyped                    ;
+; EXTCLK1_COUNTER               ; E1                        ; Untyped                    ;
+; EXTCLK0_COUNTER               ; E0                        ; Untyped                    ;
+; ENABLE0_COUNTER               ; L0                        ; Untyped                    ;
+; ENABLE1_COUNTER               ; L0                        ; Untyped                    ;
+; CHARGE_PUMP_CURRENT           ; 2                         ; Untyped                    ;
+; LOOP_FILTER_R                 ;  1.000000                 ; Untyped                    ;
+; LOOP_FILTER_C                 ; 5                         ; Untyped                    ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999                      ; Untyped                    ;
+; LOOP_FILTER_R_BITS            ; 9999                      ; Untyped                    ;
+; LOOP_FILTER_C_BITS            ; 9999                      ; Untyped                    ;
+; VCO_POST_SCALE                ; 0                         ; Untyped                    ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                         ; Untyped                    ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                         ; Untyped                    ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                         ; Untyped                    ;
+; INTENDED_DEVICE_FAMILY        ; Cyclone IV E              ; Untyped                    ;
+; PORT_CLKENA0                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLKENA1                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLKENA2                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLKENA3                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLKENA4                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLKENA5                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY         ; Untyped                    ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY         ; Untyped                    ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY         ; Untyped                    ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY         ; Untyped                    ;
+; PORT_EXTCLK0                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_EXTCLK1                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_EXTCLK2                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_EXTCLK3                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLKBAD0                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLKBAD1                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLK0                     ; PORT_USED                 ; Untyped                    ;
+; PORT_CLK1                     ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLK2                     ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLK3                     ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLK4                     ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLK5                     ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLK6                     ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLK7                     ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLK8                     ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLK9                     ; PORT_UNUSED               ; Untyped                    ;
+; PORT_SCANDATA                 ; PORT_UNUSED               ; Untyped                    ;
+; PORT_SCANDATAOUT              ; PORT_UNUSED               ; Untyped                    ;
+; PORT_SCANDONE                 ; PORT_UNUSED               ; Untyped                    ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY         ; Untyped                    ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY         ; Untyped                    ;
+; PORT_ACTIVECLOCK              ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLKLOSS                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_INCLK1                   ; PORT_UNUSED               ; Untyped                    ;
+; PORT_INCLK0                   ; PORT_USED                 ; Untyped                    ;
+; PORT_FBIN                     ; PORT_UNUSED               ; Untyped                    ;
+; PORT_PLLENA                   ; PORT_UNUSED               ; Untyped                    ;
+; PORT_CLKSWITCH                ; PORT_UNUSED               ; Untyped                    ;
+; PORT_ARESET                   ; PORT_USED                 ; Untyped                    ;
+; PORT_PFDENA                   ; PORT_UNUSED               ; Untyped                    ;
+; PORT_SCANCLK                  ; PORT_UNUSED               ; Untyped                    ;
+; PORT_SCANACLR                 ; PORT_UNUSED               ; Untyped                    ;
+; PORT_SCANREAD                 ; PORT_UNUSED               ; Untyped                    ;
+; PORT_SCANWRITE                ; PORT_UNUSED               ; Untyped                    ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY         ; Untyped                    ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY         ; Untyped                    ;
+; PORT_LOCKED                   ; PORT_USED                 ; Untyped                    ;
+; PORT_CONFIGUPDATE             ; PORT_UNUSED               ; Untyped                    ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY         ; Untyped                    ;
+; PORT_PHASEDONE                ; PORT_UNUSED               ; Untyped                    ;
+; PORT_PHASESTEP                ; PORT_UNUSED               ; Untyped                    ;
+; PORT_PHASEUPDOWN              ; PORT_UNUSED               ; Untyped                    ;
+; PORT_SCANCLKENA               ; PORT_UNUSED               ; Untyped                    ;
+; PORT_PHASECOUNTERSELECT       ; PORT_UNUSED               ; Untyped                    ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY         ; Untyped                    ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY         ; Untyped                    ;
+; M_TEST_SOURCE                 ; 5                         ; Untyped                    ;
+; C0_TEST_SOURCE                ; 5                         ; Untyped                    ;
+; C1_TEST_SOURCE                ; 5                         ; Untyped                    ;
+; C2_TEST_SOURCE                ; 5                         ; Untyped                    ;
+; C3_TEST_SOURCE                ; 5                         ; Untyped                    ;
+; C4_TEST_SOURCE                ; 5                         ; Untyped                    ;
+; C5_TEST_SOURCE                ; 5                         ; Untyped                    ;
+; C6_TEST_SOURCE                ; 5                         ; Untyped                    ;
+; C7_TEST_SOURCE                ; 5                         ; Untyped                    ;
+; C8_TEST_SOURCE                ; 5                         ; Untyped                    ;
+; C9_TEST_SOURCE                ; 5                         ; Untyped                    ;
+; CBXI_PARAMETER                ; vga_pll_altpll            ; Untyped                    ;
+; VCO_FREQUENCY_CONTROL         ; AUTO                      ; Untyped                    ;
+; VCO_PHASE_SHIFT_STEP          ; 0                         ; Untyped                    ;
+; WIDTH_CLOCK                   ; 5                         ; Signed Integer             ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                         ; Untyped                    ;
+; USING_FBMIMICBIDIR_PORT       ; OFF                       ; Untyped                    ;
+; DEVICE_FAMILY                 ; Cyclone IV E              ; Untyped                    ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED                    ; Untyped                    ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF                       ; Untyped                    ;
+; AUTO_CARRY_CHAINS             ; ON                        ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS          ; OFF                       ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS           ; ON                        ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS        ; OFF                       ; IGNORE_CASCADE             ;
++-------------------------------+---------------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_driver:u_vga_driver ;
++----------------+------------+----------------------------------------+
+; Parameter Name ; Value      ; Type                                   ;
++----------------+------------+----------------------------------------+
+; H_SYNC         ; 0001100000 ; Unsigned Binary                        ;
+; H_BACK         ; 0000110000 ; Unsigned Binary                        ;
+; H_DISP         ; 1010000000 ; Unsigned Binary                        ;
+; H_FRONT        ; 0000010000 ; Unsigned Binary                        ;
+; H_TOTAL        ; 1100100000 ; Unsigned Binary                        ;
+; V_SYNC         ; 0000000010 ; Unsigned Binary                        ;
+; V_BACK         ; 0000100001 ; Unsigned Binary                        ;
+; V_DISP         ; 0111100000 ; Unsigned Binary                        ;
+; V_FRONT        ; 0000001010 ; Unsigned Binary                        ;
+; V_TOTAL        ; 1000001101 ; Unsigned Binary                        ;
++----------------+------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_display:u_vga_display  ;
++--------------------+----------------------------------+-----------------+
+; Parameter Name     ; Value                            ; Type            ;
++--------------------+----------------------------------+-----------------+
+; H_DISP             ; 1010000000                       ; Unsigned Binary ;
+; V_DISP             ; 0111100000                       ; Unsigned Binary ;
+; CHAR_W_kaishi      ; 00000000000000000000000010100000 ; Unsigned Binary ;
+; CHAR_H_kaishi      ; 00000000000000000000000001000000 ; Unsigned Binary ;
+; CHAR_W_SIMPLE      ; 00000000000000000000000001100000 ; Unsigned Binary ;
+; CHAR_H_SIMPLE      ; 00000000000000000000000000100000 ; Unsigned Binary ;
+; CHAR_W_NORMAL      ; 00000000000000000000000001100000 ; Unsigned Binary ;
+; CHAR_H_NORMAL      ; 00000000000000000000000000100000 ; Unsigned Binary ;
+; CHAR_W_DIFFICULT   ; 00000000000000000000000010010000 ; Unsigned Binary ;
+; CHAR_H_DIFFICULT   ; 00000000000000000000000000100000 ; Unsigned Binary ;
+; CHAR_W_AGAIN       ; 00000000000000000000000001100000 ; Unsigned Binary ;
+; CHAR_H_AGAIN       ; 00000000000000000000000000100000 ; Unsigned Binary ;
+; CHAR_W_MAIN        ; 00000000000000000000000010010000 ; Unsigned Binary ;
+; CHAR_H_MAIN        ; 00000000000000000000000000100000 ; Unsigned Binary ;
+; CHAR_W             ; 00000000000000000000000000100000 ; Unsigned Binary ;
+; CHAR_H             ; 00000000000000000000000001000000 ; Unsigned Binary ;
+; H_apple            ; 0000010100                       ; Unsigned Binary ;
+; W_apple            ; 0000010100                       ; Unsigned Binary ;
+; PIC_apple          ; 00000110010000                   ; Unsigned Binary ;
+; H_snack            ; 0000110111                       ; Unsigned Binary ;
+; W_snack            ; 0001000010                       ; Unsigned Binary ;
+; PIC_snack          ; 00000000000000000000111000101110 ; Unsigned Binary ;
+; idle               ; 000000                           ; Unsigned Binary ;
+; s1                 ; 000001                           ; Unsigned Binary ;
+; s2                 ; 000010                           ; Unsigned Binary ;
+; s3                 ; 001000                           ; Unsigned Binary ;
+; CHAR_B_H_kaishi    ; 00000000000000000000000011110000 ; Unsigned Binary ;
+; CHAR_B_V_kaishi    ; 00000000000000000000000011010000 ; Unsigned Binary ;
+; CHAR_B_H_SIMPLE    ; 00000000000000000000000100011000 ; Unsigned Binary ;
+; CHAR_B_V_SIMPLE    ; 00000000000000000000000010101000 ; Unsigned Binary ;
+; CHAR_B_H_NORMAL    ; 00000000000000000000000100011000 ; Unsigned Binary ;
+; CHAR_B_V_NORMAL    ; 00000000000000000000000011010000 ; Unsigned Binary ;
+; CHAR_B_H_DIFFICULT ; 00000000000000000000000100011000 ; Unsigned Binary ;
+; CHAR_B_V_DIFFICULT ; 00000000000000000000000011111000 ; Unsigned Binary ;
+; CHAR_B_H_AGAIN     ; 00000000000000000000000100011000 ; Unsigned Binary ;
+; CHAR_B_V_AGAIN     ; 00000000000000000000000011010000 ; Unsigned Binary ;
+; CHAR_B_H_MAIN      ; 00000000000000000000000100011000 ; Unsigned Binary ;
+; CHAR_B_V_MAIN      ; 00000000000000000000000011111000 ; Unsigned Binary ;
+; PIC_B_H_snack      ; 00000000000000000000000100001110 ; Unsigned Binary ;
+; PIC_B_V_snack      ; 00000000000000000000000100110100 ; Unsigned Binary ;
+; CHAR_B_H           ; 00000000000000000000000100011000 ; Unsigned Binary ;
+; CHAR_B_V           ; 00000000000000000000000010000000 ; Unsigned Binary ;
+; up                 ; 01                               ; Unsigned Binary ;
+; down               ; 00                               ; Unsigned Binary ;
+; left               ; 10                               ; Unsigned Binary ;
+; right              ; 11                               ; Unsigned Binary ;
++--------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst|altsyncram:altsyncram_component ;
++------------------------------------+-------------------------+--------------------------------------------------------------------------------------------+
+; Parameter Name                     ; Value                   ; Type                                                                                       ;
++------------------------------------+-------------------------+--------------------------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                       ; Untyped                                                                                    ;
+; AUTO_CARRY_CHAINS                  ; ON                      ; AUTO_CARRY                                                                                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                     ; IGNORE_CARRY                                                                               ;
+; AUTO_CASCADE_CHAINS                ; ON                      ; AUTO_CASCADE                                                                               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                     ; IGNORE_CASCADE                                                                             ;
+; WIDTH_BYTEENA                      ; 1                       ; Untyped                                                                                    ;
+; OPERATION_MODE                     ; ROM                     ; Untyped                                                                                    ;
+; WIDTH_A                            ; 16                      ; Signed Integer                                                                             ;
+; WIDTHAD_A                          ; 10                      ; Signed Integer                                                                             ;
+; NUMWORDS_A                         ; 1024                    ; Signed Integer                                                                             ;
+; OUTDATA_REG_A                      ; UNREGISTERED            ; Untyped                                                                                    ;
+; ADDRESS_ACLR_A                     ; NONE                    ; Untyped                                                                                    ;
+; OUTDATA_ACLR_A                     ; NONE                    ; Untyped                                                                                    ;
+; WRCONTROL_ACLR_A                   ; NONE                    ; Untyped                                                                                    ;
+; INDATA_ACLR_A                      ; NONE                    ; Untyped                                                                                    ;
+; BYTEENA_ACLR_A                     ; NONE                    ; Untyped                                                                                    ;
+; WIDTH_B                            ; 1                       ; Untyped                                                                                    ;
+; WIDTHAD_B                          ; 1                       ; Untyped                                                                                    ;
+; NUMWORDS_B                         ; 1                       ; Untyped                                                                                    ;
+; INDATA_REG_B                       ; CLOCK1                  ; Untyped                                                                                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                  ; Untyped                                                                                    ;
+; RDCONTROL_REG_B                    ; CLOCK1                  ; Untyped                                                                                    ;
+; ADDRESS_REG_B                      ; CLOCK1                  ; Untyped                                                                                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED            ; Untyped                                                                                    ;
+; BYTEENA_REG_B                      ; CLOCK1                  ; Untyped                                                                                    ;
+; INDATA_ACLR_B                      ; NONE                    ; Untyped                                                                                    ;
+; WRCONTROL_ACLR_B                   ; NONE                    ; Untyped                                                                                    ;
+; ADDRESS_ACLR_B                     ; NONE                    ; Untyped                                                                                    ;
+; OUTDATA_ACLR_B                     ; NONE                    ; Untyped                                                                                    ;
+; RDCONTROL_ACLR_B                   ; NONE                    ; Untyped                                                                                    ;
+; BYTEENA_ACLR_B                     ; NONE                    ; Untyped                                                                                    ;
+; WIDTH_BYTEENA_A                    ; 1                       ; Signed Integer                                                                             ;
+; WIDTH_BYTEENA_B                    ; 1                       ; Untyped                                                                                    ;
+; RAM_BLOCK_TYPE                     ; AUTO                    ; Untyped                                                                                    ;
+; BYTE_SIZE                          ; 8                       ; Untyped                                                                                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE               ; Untyped                                                                                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ    ; Untyped                                                                                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ    ; Untyped                                                                                    ;
+; INIT_FILE                          ; ../../mif/apple_big.mif ; Untyped                                                                                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A                  ; Untyped                                                                                    ;
+; MAXIMUM_DEPTH                      ; 0                       ; Untyped                                                                                    ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                  ; Untyped                                                                                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                  ; Untyped                                                                                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                  ; Untyped                                                                                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                  ; Untyped                                                                                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN         ; Untyped                                                                                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN         ; Untyped                                                                                    ;
+; ENABLE_ECC                         ; FALSE                   ; Untyped                                                                                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                   ; Untyped                                                                                    ;
+; WIDTH_ECCSTATUS                    ; 3                       ; Untyped                                                                                    ;
+; DEVICE_FAMILY                      ; Cyclone IV E            ; Untyped                                                                                    ;
+; CBXI_PARAMETER                     ; altsyncram_4kb1         ; Untyped                                                                                    ;
++------------------------------------+-------------------------+--------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                                  ;
++------------------------------------+----------------------+---------------------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                               ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                                            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                                          ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                                          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                                        ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                               ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                                               ;
+; WIDTH_A                            ; 16                   ; Signed Integer                                                                        ;
+; WIDTHAD_A                          ; 9                    ; Signed Integer                                                                        ;
+; NUMWORDS_A                         ; 512                  ; Signed Integer                                                                        ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                                               ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                               ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                               ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                               ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                               ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                               ;
+; WIDTH_B                            ; 1                    ; Untyped                                                                               ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                                               ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                                               ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                               ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                               ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                                               ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                               ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                               ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                               ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                               ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                               ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                               ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                               ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                               ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                                        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                                               ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                                               ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                                               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                               ;
+; INIT_FILE                          ; ../../mif/apple.mif  ; Untyped                                                                               ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                               ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                               ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                                               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                               ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                                               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                                               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                               ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                                               ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                               ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                               ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                                               ;
+; CBXI_PARAMETER                     ; altsyncram_s4b1      ; Untyped                                                                               ;
++------------------------------------+----------------------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_display:u_vga_display|rom_snack_55x66x16:rom_snack_55x66x16inst|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+--------------------------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                                 ;
++------------------------------------+----------------------+--------------------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                              ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                                           ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                                         ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                                         ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                                       ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                              ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                                              ;
+; WIDTH_A                            ; 16                   ; Signed Integer                                                                       ;
+; WIDTHAD_A                          ; 12                   ; Signed Integer                                                                       ;
+; NUMWORDS_A                         ; 4096                 ; Signed Integer                                                                       ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                                              ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                              ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                              ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                              ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                              ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                              ;
+; WIDTH_B                            ; 1                    ; Untyped                                                                              ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                                              ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                                              ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                              ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                              ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                              ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                                              ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                              ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                              ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                              ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                              ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                              ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                              ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                              ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                              ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                                       ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                                              ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                                              ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                                              ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                              ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                              ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                              ;
+; INIT_FILE                          ; ../../mif/snack.mif  ; Untyped                                                                              ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                              ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                              ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                                              ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                              ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                                              ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                                              ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                              ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                              ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                                              ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                              ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                              ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                                              ;
+; CBXI_PARAMETER                     ; altsyncram_v7b1      ; Untyped                                                                              ;
++------------------------------------+----------------------+--------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: key_filter:key_filter_inst ;
++----------------+----------------------+---------------------------------+
+; Parameter Name ; Value                ; Type                            ;
++----------------+----------------------+---------------------------------+
+; CNT_MAX        ; 11110100001000111111 ; Unsigned Binary                 ;
++----------------+----------------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: key_filter:key_filter_inst1 ;
++----------------+----------------------+----------------------------------+
+; Parameter Name ; Value                ; Type                             ;
++----------------+----------------------+----------------------------------+
+; CNT_MAX        ; 11110100001000111111 ; Unsigned Binary                  ;
++----------------+----------------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: key_filter:key_filter_inst2 ;
++----------------+----------------------+----------------------------------+
+; Parameter Name ; Value                ; Type                             ;
++----------------+----------------------+----------------------------------+
+; CNT_MAX        ; 11110100001000111111 ; Unsigned Binary                  ;
++----------------+----------------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seg_595_dynamic:seg_595_dynamic_inst|seg_dynamic:seg_dynamic_inst ;
++----------------+------------------+----------------------------------------------------------------------------+
+; Parameter Name ; Value            ; Type                                                                       ;
++----------------+------------------+----------------------------------------------------------------------------+
+; CNT_MAX        ; 1100001101001111 ; Unsigned Binary                                                            ;
++----------------+------------------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                                                                                                                                                        ;
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name                                  ; Value                                                                                                                                                               ; Type           ;
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                                                                                                                                                       ; String         ;
+; sld_node_info                                   ; 805334528                                                                                                                                                           ; Untyped        ;
+; SLD_SECTION_ID                                  ; hdl_signaltap_0                                                                                                                                                     ; String         ;
+; SLD_IP_VERSION                                  ; 6                                                                                                                                                                   ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                                                                                                                                                   ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                                                                                                                                                   ; Signed Integer ;
+; sld_data_bits                                   ; 46                                                                                                                                                                  ; Untyped        ;
+; sld_trigger_bits                                ; 46                                                                                                                                                                  ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                                                                                                                                                  ; Signed Integer ;
+; SLD_NODE_CRC_HIWORD                             ; 41394                                                                                                                                                               ; Signed Integer ;
+; SLD_NODE_CRC_LOWORD                             ; 50132                                                                                                                                                               ; Signed Integer ;
+; sld_incremental_routing                         ; 1                                                                                                                                                                   ; Untyped        ;
+; sld_sample_depth                                ; 2048                                                                                                                                                                ; Untyped        ;
+; sld_segment_size                                ; 2048                                                                                                                                                                ; Untyped        ;
+; sld_ram_block_type                              ; AUTO                                                                                                                                                                ; Untyped        ;
+; sld_state_bits                                  ; 11                                                                                                                                                                  ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                                                                                                                                                                   ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                                                                                                                                                   ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                                                                                                                                                   ; Signed Integer ;
+; sld_trigger_level                               ; 1                                                                                                                                                                   ; Untyped        ;
+; sld_trigger_in_enabled                          ; 0                                                                                                                                                                   ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                                                                                                                                                   ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                                                                                                                                                   ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                                                                                                                                                                   ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                                                                                                                                                                   ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; basic,1,                                                                                                                                                            ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                                                                                                                                                   ; Untyped        ;
+; sld_trigger_pipeline                            ; 0                                                                                                                                                                   ; Untyped        ;
+; sld_ram_pipeline                                ; 0                                                                                                                                                                   ; Untyped        ;
+; sld_counter_pipeline                            ; 0                                                                                                                                                                   ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                                                                                                                                                                   ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                                                                                                                                                                ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                                                                                                                                                                ; String         ;
+; sld_inversion_mask_length                       ; 163                                                                                                                                                                 ; Untyped        ;
+; sld_inversion_mask                              ; 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                                                                                                                                                   ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd                                                                                                                                           ; String         ;
+; sld_state_flow_use_generated                    ; 0                                                                                                                                                                   ; Untyped        ;
+; sld_current_resource_width                      ; 1                                                                                                                                                                   ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                                                                                                                                                 ; Untyped        ;
+; sld_storage_qualifier_bits                      ; 46                                                                                                                                                                  ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                                                                                                                                                   ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                                                                                                                                                 ; String         ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                                                                                                                                                   ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 0                                                                                                                                                                   ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                                                                                                                                               ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                                                                                                                                                   ; Signed Integer ;
+; SLD_CREATE_MONITOR_INTERFACE                    ; 0                                                                                                                                                                   ; Signed Integer ;
+; SLD_USE_JTAG_SIGNAL_ADAPTER                     ; 1                                                                                                                                                                   ; Signed Integer ;
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; altpll Parameter Settings by Entity Instance                              ;
++-------------------------------+-------------------------------------------+
+; Name                          ; Value                                     ;
++-------------------------------+-------------------------------------------+
+; Number of entity instances    ; 1                                         ;
+; Entity Instance               ; vga_pll:u_vga_pll|altpll:altpll_component ;
+;     -- OPERATION_MODE         ; NORMAL                                    ;
+;     -- PLL_TYPE               ; AUTO                                      ;
+;     -- PRIMARY_CLOCK          ; INCLK0                                    ;
+;     -- INCLK0_INPUT_FREQUENCY ; 20000                                     ;
+;     -- INCLK1_INPUT_FREQUENCY ; 0                                         ;
+;     -- VCO_MULTIPLY_BY        ; 0                                         ;
+;     -- VCO_DIVIDE_BY          ; 0                                         ;
++-------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                                                         ;
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                                                        ;
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+; Number of entity instances                ; 3                                                                                                            ;
+; Entity Instance                           ; vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                                                          ;
+;     -- WIDTH_A                            ; 16                                                                                                           ;
+;     -- NUMWORDS_A                         ; 1024                                                                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                                                 ;
+;     -- WIDTH_B                            ; 1                                                                                                            ;
+;     -- NUMWORDS_B                         ; 1                                                                                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                                    ;
+; Entity Instance                           ; vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst|altsyncram:altsyncram_component         ;
+;     -- OPERATION_MODE                     ; ROM                                                                                                          ;
+;     -- WIDTH_A                            ; 16                                                                                                           ;
+;     -- NUMWORDS_A                         ; 512                                                                                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                                                 ;
+;     -- WIDTH_B                            ; 1                                                                                                            ;
+;     -- NUMWORDS_B                         ; 1                                                                                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                                    ;
+; Entity Instance                           ; vga_display:u_vga_display|rom_snack_55x66x16:rom_snack_55x66x16inst|altsyncram:altsyncram_component          ;
+;     -- OPERATION_MODE                     ; ROM                                                                                                          ;
+;     -- WIDTH_A                            ; 16                                                                                                           ;
+;     -- NUMWORDS_A                         ; 4096                                                                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                                                 ;
+;     -- WIDTH_B                            ; 1                                                                                                            ;
+;     -- NUMWORDS_B                         ; 1                                                                                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                                    ;
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                            ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE10F17C8       ;                    ;
+; Top-level entity name                                            ; vga_blockmove      ; vga_blockmove      ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "seg_595_dynamic:seg_595_dynamic_inst"                                                                                                                                                    ;
++-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data        ; Input ; Warning  ; Input port expression (10 bits) is smaller than the input port (20 bits) it drives.  Extra input bit(s) "data[19..10]" will be connected to GND.                                   ;
+; point       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; point[5..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; seg_en      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; sign        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; sign[-1]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_display:u_vga_display|bcd_8421:bcd_8421_inst"                                                                                                     ;
++-----------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                          ;
++-----------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; sys_rst_n ; Input  ; Info     ; Stuck at VCC                                                                                                                                     ;
+; data      ; Input  ; Warning  ; Input port expression (10 bits) is smaller than the input port (20 bits) it drives.  Extra input bit(s) "data[19..10]" will be connected to GND. ;
+; t_tho     ; Output ; Info     ; Explicitly unconnected                                                                                                                           ;
+; h_hun     ; Output ; Info     ; Explicitly unconnected                                                                                                                           ;
++-----------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst"                                                                                                               ;
++---------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                           ;
++---------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; address ; Input ; Warning  ; Input port expression (11 bits) is wider than the input port (9 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++---------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst"                                                                                                        ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; address ; Input ; Warning  ; Input port expression (11 bits) is wider than the input port (10 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Tap Logic Analyzer Settings                                                                                                                                                                                                                                      ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 46                  ; 46               ; 2048         ; 1        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Fri Dec  6 21:03:10 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_blockmove -c vga_blockmove --analysis_and_elaboration
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /desktop/gongcheng(1)/gongcheng/rtl/seg/seg_dynamic.v
+    Info (12023): Found entity 1: seg_dynamic File: D:/desktop/gongcheng(1)/gongcheng/rtl/seg/seg_dynamic.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file /desktop/gongcheng(1)/gongcheng/rtl/seg/seg_595_dynamic.v
+    Info (12023): Found entity 1: seg_595_dynamic File: D:/desktop/gongcheng(1)/gongcheng/rtl/seg/seg_595_dynamic.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file /desktop/gongcheng(1)/gongcheng/rtl/seg/hc595_ctrl.v
+    Info (12023): Found entity 1: hc595_ctrl File: D:/desktop/gongcheng(1)/gongcheng/rtl/seg/hc595_ctrl.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file /desktop/gongcheng(1)/gongcheng/rtl/bcd_8421.v
+    Info (12023): Found entity 1: bcd_8421 File: D:/desktop/gongcheng(1)/gongcheng/rtl/bcd_8421.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file /desktop/gongcheng(1)/gongcheng/rtl/key_filter.v
+    Info (12023): Found entity 1: key_filter File: D:/desktop/gongcheng(1)/gongcheng/rtl/key_filter.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file /desktop/gongcheng(1)/gongcheng/rtl/key_led.v
+    Info (12023): Found entity 1: key_led File: D:/desktop/gongcheng(1)/gongcheng/rtl/key_led.v Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file vga_pll.v
+    Info (12023): Found entity 1: vga_pll File: D:/desktop/gongcheng(1)/gongcheng/par/vga_pll.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file /desktop/gongcheng(1)/gongcheng/rtl/vga_driver.v
+    Info (12023): Found entity 1: vga_driver File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_driver.v Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file /desktop/gongcheng(1)/gongcheng/rtl/vga_display.v
+    Info (12023): Found entity 1: vga_display File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file /desktop/gongcheng(1)/gongcheng/rtl/vga_blockmove.v
+    Info (12023): Found entity 1: vga_blockmove File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_blockmove.v Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file ip_core/rom_apple/rom_apple_20x20x16.v
+    Info (12023): Found entity 1: rom_apple_20x20x16 File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_apple/rom_apple_20x20x16.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file ip_core/rom_snack/rom_snack_55x66x16.v
+    Info (12023): Found entity 1: rom_snack_55x66x16 File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_snack/rom_snack_55x66x16.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file ip_core/rom_apple_big/rom_apple_big_30x30x16.v
+    Info (12023): Found entity 1: rom_apple_big_30x30x16 File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_apple_big/rom_apple_big_30x30x16.v Line: 39
+Info (12127): Elaborating entity "vga_blockmove" for the top level hierarchy
+Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_pll:u_vga_pll" File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_blockmove.v Line: 74
+Info (12128): Elaborating entity "altpll" for hierarchy "vga_pll:u_vga_pll|altpll:altpll_component" File: D:/desktop/gongcheng(1)/gongcheng/par/vga_pll.v Line: 103
+Info (12130): Elaborated megafunction instantiation "vga_pll:u_vga_pll|altpll:altpll_component" File: D:/desktop/gongcheng(1)/gongcheng/par/vga_pll.v Line: 103
+Info (12133): Instantiated megafunction "vga_pll:u_vga_pll|altpll:altpll_component" with the following parameter: File: D:/desktop/gongcheng(1)/gongcheng/par/vga_pll.v Line: 103
+    Info (12134): Parameter "bandwidth_type" = "AUTO"
+    Info (12134): Parameter "clk0_divide_by" = "2"
+    Info (12134): Parameter "clk0_duty_cycle" = "50"
+    Info (12134): Parameter "clk0_multiply_by" = "1"
+    Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "compensate_clock" = "CLK0"
+    Info (12134): Parameter "inclk0_input_frequency" = "20000"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "CBX_MODULE_PREFIX=vga_pll"
+    Info (12134): Parameter "lpm_type" = "altpll"
+    Info (12134): Parameter "operation_mode" = "NORMAL"
+    Info (12134): Parameter "pll_type" = "AUTO"
+    Info (12134): Parameter "port_activeclock" = "PORT_UNUSED"
+    Info (12134): Parameter "port_areset" = "PORT_USED"
+    Info (12134): Parameter "port_clkbad0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkbad1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkloss" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkswitch" = "PORT_UNUSED"
+    Info (12134): Parameter "port_configupdate" = "PORT_UNUSED"
+    Info (12134): Parameter "port_fbin" = "PORT_UNUSED"
+    Info (12134): Parameter "port_inclk0" = "PORT_USED"
+    Info (12134): Parameter "port_inclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_locked" = "PORT_USED"
+    Info (12134): Parameter "port_pfdena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasecounterselect" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasedone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasestep" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phaseupdown" = "PORT_UNUSED"
+    Info (12134): Parameter "port_pllena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanaclr" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclk" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclkena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandata" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandataout" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanread" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk0" = "PORT_USED"
+    Info (12134): Parameter "port_clk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
+    Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
+    Info (12134): Parameter "width_clock" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/vga_pll_altpll.v
+    Info (12023): Found entity 1: vga_pll_altpll File: D:/desktop/gongcheng(1)/gongcheng/par/db/vga_pll_altpll.v Line: 31
+Info (12128): Elaborating entity "vga_pll_altpll" for hierarchy "vga_pll:u_vga_pll|altpll:altpll_component|vga_pll_altpll:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12128): Elaborating entity "vga_driver" for hierarchy "vga_driver:u_vga_driver" File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_blockmove.v Line: 87
+Info (12128): Elaborating entity "vga_display" for hierarchy "vga_display:u_vga_display" File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_blockmove.v Line: 106
+Warning (10036): Verilog HDL or VHDL warning at vga_display.v(145): object "index" assigned a value but never read File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 145
+Warning (10230): Verilog HDL assignment warning at vga_display.v(222): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 222
+Warning (10230): Verilog HDL assignment warning at vga_display.v(223): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 223
+Warning (10230): Verilog HDL assignment warning at vga_display.v(287): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 287
+Warning (10230): Verilog HDL assignment warning at vga_display.v(290): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 290
+Warning (10230): Verilog HDL assignment warning at vga_display.v(293): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 293
+Warning (10230): Verilog HDL assignment warning at vga_display.v(296): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 296
+Warning (10230): Verilog HDL assignment warning at vga_display.v(299): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 299
+Warning (10230): Verilog HDL assignment warning at vga_display.v(302): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 302
+Warning (10230): Verilog HDL assignment warning at vga_display.v(408): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 408
+Warning (10230): Verilog HDL assignment warning at vga_display.v(413): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 413
+Warning (10230): Verilog HDL assignment warning at vga_display.v(417): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 417
+Warning (10230): Verilog HDL assignment warning at vga_display.v(420): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 420
+Warning (10230): Verilog HDL assignment warning at vga_display.v(423): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 423
+Warning (10230): Verilog HDL assignment warning at vga_display.v(426): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 426
+Warning (10230): Verilog HDL assignment warning at vga_display.v(438): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 438
+Warning (10230): Verilog HDL assignment warning at vga_display.v(457): truncated value with size 32 to match size of target (26) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 457
+Warning (10230): Verilog HDL assignment warning at vga_display.v(462): truncated value with size 22 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 462
+Warning (10230): Verilog HDL assignment warning at vga_display.v(463): truncated value with size 22 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 463
+Warning (10230): Verilog HDL assignment warning at vga_display.v(531): truncated value with size 22 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 531
+Warning (10230): Verilog HDL assignment warning at vga_display.v(532): truncated value with size 22 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 532
+Warning (10230): Verilog HDL assignment warning at vga_display.v(545): truncated value with size 22 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 545
+Warning (10230): Verilog HDL assignment warning at vga_display.v(546): truncated value with size 22 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 546
+Warning (10230): Verilog HDL assignment warning at vga_display.v(562): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 562
+Warning (10230): Verilog HDL assignment warning at vga_display.v(563): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 563
+Warning (10230): Verilog HDL assignment warning at vga_display.v(564): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 564
+Warning (10230): Verilog HDL assignment warning at vga_display.v(565): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 565
+Warning (10230): Verilog HDL assignment warning at vga_display.v(612): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 612
+Warning (10230): Verilog HDL assignment warning at vga_display.v(614): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 614
+Warning (10230): Verilog HDL assignment warning at vga_display.v(618): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 618
+Warning (10230): Verilog HDL assignment warning at vga_display.v(620): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 620
+Warning (10230): Verilog HDL assignment warning at vga_display.v(622): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 622
+Warning (10230): Verilog HDL assignment warning at vga_display.v(623): truncated value with size 32 to match size of target (10) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 623
+Warning (10230): Verilog HDL assignment warning at vga_display.v(677): truncated value with size 8 to match size of target (4) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 677
+Warning (10230): Verilog HDL assignment warning at vga_display.v(679): truncated value with size 8 to match size of target (4) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 679
+Warning (10230): Verilog HDL assignment warning at vga_display.v(699): truncated value with size 14 to match size of target (12) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 699
+Warning (10230): Verilog HDL assignment warning at vga_display.v(701): truncated value with size 14 to match size of target (12) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 701
+Warning (10230): Verilog HDL assignment warning at vga_display.v(710): truncated value with size 14 to match size of target (11) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 710
+Warning (10230): Verilog HDL assignment warning at vga_display.v(712): truncated value with size 14 to match size of target (11) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 712
+Warning (10230): Verilog HDL assignment warning at vga_display.v(719): truncated value with size 14 to match size of target (11) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 719
+Warning (10230): Verilog HDL assignment warning at vga_display.v(721): truncated value with size 14 to match size of target (11) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 721
+Warning (10230): Verilog HDL assignment warning at vga_display.v(910): truncated value with size 256 to match size of target (200) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 910
+Warning (10230): Verilog HDL assignment warning at vga_display.v(911): truncated value with size 256 to match size of target (200) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 911
+Warning (10230): Verilog HDL assignment warning at vga_display.v(912): truncated value with size 256 to match size of target (200) File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 912
+Info (12128): Elaborating entity "rom_apple_big_30x30x16" for hierarchy "vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst" File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 731
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst|altsyncram:altsyncram_component" File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_apple_big/rom_apple_big_30x30x16.v Line: 84
+Info (12130): Elaborated megafunction instantiation "vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst|altsyncram:altsyncram_component" File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_apple_big/rom_apple_big_30x30x16.v Line: 84
+Info (12133): Instantiated megafunction "vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst|altsyncram:altsyncram_component" with the following parameter: File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_apple_big/rom_apple_big_30x30x16.v Line: 84
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "../../mif/apple_big.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "1024"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "10"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4kb1.tdf
+    Info (12023): Found entity 1: altsyncram_4kb1 File: D:/desktop/gongcheng(1)/gongcheng/par/db/altsyncram_4kb1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_4kb1" for hierarchy "vga_display:u_vga_display|rom_apple_big_30x30x16:rom_apple_big_30x30x16_inst|altsyncram:altsyncram_component|altsyncram_4kb1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Critical Warning (127005): Memory depth (1024) in the design file differs from memory depth (900) in the Memory Initialization File "D:/desktop/gongcheng(1)/gongcheng/par/mif/apple_big.mif" -- setting initial value for remaining addresses to 0 File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_apple_big/rom_apple_big_30x30x16.v Line: 84
+Info (12128): Elaborating entity "rom_apple_20x20x16" for hierarchy "vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst" File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 739
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst|altsyncram:altsyncram_component" File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_apple/rom_apple_20x20x16.v Line: 84
+Info (12130): Elaborated megafunction instantiation "vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst|altsyncram:altsyncram_component" File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_apple/rom_apple_20x20x16.v Line: 84
+Info (12133): Instantiated megafunction "vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst|altsyncram:altsyncram_component" with the following parameter: File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_apple/rom_apple_20x20x16.v Line: 84
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "../../mif/apple.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "512"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "9"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_s4b1.tdf
+    Info (12023): Found entity 1: altsyncram_s4b1 File: D:/desktop/gongcheng(1)/gongcheng/par/db/altsyncram_s4b1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_s4b1" for hierarchy "vga_display:u_vga_display|rom_apple_20x20x16:rom_apple_20x20x16_inst|altsyncram:altsyncram_component|altsyncram_s4b1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Critical Warning (127005): Memory depth (512) in the design file differs from memory depth (400) in the Memory Initialization File "D:/desktop/gongcheng(1)/gongcheng/par/mif/apple.mif" -- setting initial value for remaining addresses to 0 File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_apple/rom_apple_20x20x16.v Line: 84
+Info (12128): Elaborating entity "rom_snack_55x66x16" for hierarchy "vga_display:u_vga_display|rom_snack_55x66x16:rom_snack_55x66x16inst" File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 748
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_display:u_vga_display|rom_snack_55x66x16:rom_snack_55x66x16inst|altsyncram:altsyncram_component" File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_snack/rom_snack_55x66x16.v Line: 84
+Info (12130): Elaborated megafunction instantiation "vga_display:u_vga_display|rom_snack_55x66x16:rom_snack_55x66x16inst|altsyncram:altsyncram_component" File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_snack/rom_snack_55x66x16.v Line: 84
+Info (12133): Instantiated megafunction "vga_display:u_vga_display|rom_snack_55x66x16:rom_snack_55x66x16inst|altsyncram:altsyncram_component" with the following parameter: File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_snack/rom_snack_55x66x16.v Line: 84
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "../../mif/snack.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "4096"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "12"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_v7b1.tdf
+    Info (12023): Found entity 1: altsyncram_v7b1 File: D:/desktop/gongcheng(1)/gongcheng/par/db/altsyncram_v7b1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_v7b1" for hierarchy "vga_display:u_vga_display|rom_snack_55x66x16:rom_snack_55x66x16inst|altsyncram:altsyncram_component|altsyncram_v7b1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Critical Warning (127005): Memory depth (4096) in the design file differs from memory depth (3630) in the Memory Initialization File "D:/desktop/gongcheng(1)/gongcheng/par/mif/snack.mif" -- setting initial value for remaining addresses to 0 File: D:/desktop/gongcheng(1)/gongcheng/par/ip_core/rom_snack/rom_snack_55x66x16.v Line: 84
+Info (12128): Elaborating entity "bcd_8421" for hierarchy "vga_display:u_vga_display|bcd_8421:bcd_8421_inst" File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_display.v Line: 762
+Info (12128): Elaborating entity "key_led" for hierarchy "key_led:key_led" File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_blockmove.v Line: 117
+Info (12128): Elaborating entity "key_filter" for hierarchy "key_filter:key_filter_inst" File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_blockmove.v Line: 133
+Info (12128): Elaborating entity "seg_595_dynamic" for hierarchy "seg_595_dynamic:seg_595_dynamic_inst" File: D:/desktop/gongcheng(1)/gongcheng/rtl/vga_blockmove.v Line: 178
+Info (12128): Elaborating entity "seg_dynamic" for hierarchy "seg_595_dynamic:seg_595_dynamic_inst|seg_dynamic:seg_dynamic_inst" File: D:/desktop/gongcheng(1)/gongcheng/rtl/seg/seg_595_dynamic.v Line: 59
+Info (12128): Elaborating entity "hc595_ctrl" for hierarchy "seg_595_dynamic:seg_595_dynamic_inst|hc595_ctrl:hc595_ctrl_inst" File: D:/desktop/gongcheng(1)/gongcheng/rtl/seg/seg_595_dynamic.v Line: 74
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6b24.tdf
+    Info (12023): Found entity 1: altsyncram_6b24 File: D:/desktop/gongcheng(1)/gongcheng/par/db/altsyncram_6b24.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_rsc.tdf
+    Info (12023): Found entity 1: mux_rsc File: D:/desktop/gongcheng(1)/gongcheng/par/db/mux_rsc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dvf.tdf
+    Info (12023): Found entity 1: decode_dvf File: D:/desktop/gongcheng(1)/gongcheng/par/db/decode_dvf.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_kgi.tdf
+    Info (12023): Found entity 1: cntr_kgi File: D:/desktop/gongcheng(1)/gongcheng/par/db/cntr_kgi.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_sgc.tdf
+    Info (12023): Found entity 1: cmpr_sgc File: D:/desktop/gongcheng(1)/gongcheng/par/db/cmpr_sgc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_g9j.tdf
+    Info (12023): Found entity 1: cntr_g9j File: D:/desktop/gongcheng(1)/gongcheng/par/db/cntr_g9j.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_egi.tdf
+    Info (12023): Found entity 1: cntr_egi File: D:/desktop/gongcheng(1)/gongcheng/par/db/cntr_egi.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_rgc.tdf
+    Info (12023): Found entity 1: cmpr_rgc File: D:/desktop/gongcheng(1)/gongcheng/par/db/cmpr_rgc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_23j.tdf
+    Info (12023): Found entity 1: cntr_23j File: D:/desktop/gongcheng(1)/gongcheng/par/db/cntr_23j.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ngc.tdf
+    Info (12023): Found entity 1: cmpr_ngc File: D:/desktop/gongcheng(1)/gongcheng/par/db/cmpr_ngc.tdf Line: 23
+Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+Info (11172): 2024.12.06.21:03:28 Progress: Loading sld9a74f65a/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9a74f65a/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab File: D:/desktop/gongcheng(1)/gongcheng/par/db/ip/sld9a74f65a/alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9a74f65a/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: D:/desktop/gongcheng(1)/gongcheng/par/db/ip/sld9a74f65a/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9a74f65a/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: D:/desktop/gongcheng(1)/gongcheng/par/db/ip/sld9a74f65a/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9a74f65a/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: D:/desktop/gongcheng(1)/gongcheng/par/db/ip/sld9a74f65a/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sld9a74f65a/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: D:/desktop/gongcheng(1)/gongcheng/par/db/ip/sld9a74f65a/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: D:/desktop/gongcheng(1)/gongcheng/par/db/ip/sld9a74f65a/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9a74f65a/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: D:/desktop/gongcheng(1)/gongcheng/par/db/ip/sld9a74f65a/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file D:/desktop/gongcheng(1)/gongcheng/par/output_files/vga_blockmove.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 49 warnings
+    Info: Peak virtual memory: 4968 megabytes
+    Info: Processing ended: Fri Dec  6 21:03:37 2024
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:33
+
+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in D:/desktop/gongcheng(1)/gongcheng/par/output_files/vga_blockmove.map.smsg.
+
+
